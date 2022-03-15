@@ -14,6 +14,7 @@ const render = Render.create({
     height,
   },
 });
+
 Render.run(render);
 Runner.run(Runner.create(), engine);
 
