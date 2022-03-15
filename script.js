@@ -41,3 +41,23 @@ const verticals = Array(cells)
 const horizontals = Array(cells - 1)
   .fill(null)
   .map(() => Array(cells).fill(false));
+
+const startRow = Math.floor(Math.random() * cells);
+const startColumn = Math.floor(Math.random() * cells);
+
+const stepThroughCell = (row, column) => {
+  if (grid[row][column] === true) {
+    return;
+  }
+
+  grid[row][column] = true;
+
+  const neighbours = [
+    [row - 1, column],
+    [row, column + 1],
+    [row + 1, column],
+    [row, column - 1],
+  ];
+};
+
+stepThroughCell(startRow, startColumn);
