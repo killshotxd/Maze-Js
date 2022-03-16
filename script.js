@@ -1,6 +1,6 @@
 const { Engine, Render, Runner, World, Bodies } = Matter;
 
-const cells = 3;
+const cells = 15;
 const width = 600;
 const height = 600;
 
@@ -154,6 +154,8 @@ verticals.forEach((row, rowIndex) => {
   });
 });
 
+//Goal
+
 const goal = Bodies.rectangle(
   width - unitLength / 2,
   height - unitLength / 2,
@@ -164,3 +166,8 @@ const goal = Bodies.rectangle(
   }
 );
 World.add(world, goal);
+
+//Ball
+
+const ball = Bodies.circle(unitLength / 2, unitLength / 2, unitLength / 4);
+World.add(world, ball);
